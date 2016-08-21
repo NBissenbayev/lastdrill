@@ -1,0 +1,236 @@
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Drill_Sim.dll.config
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Drill_Sim.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Drill_Sim.pdb
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Antlr3.Runtime.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\EntityFramework.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\EntityFramework.SqlServer.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.Identity.Core.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.Cookies.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.Facebook.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.Google.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.OAuth.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.Twitter.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Web.Infrastructure.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Newtonsoft.Json.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Owin.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.Helpers.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.Mvc.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.Optimization.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.Razor.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.WebPages.Deployment.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.WebPages.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.WebPages.Razor.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\WebGrease.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\EntityFramework.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\EntityFramework.SqlServer.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.Helpers.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.Mvc.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.Optimization.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.Razor.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.WebPages.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.WebPages.Deployment.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\System.Web.WebPages.Razor.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Antlr3.Runtime.pdb
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Newtonsoft.Json.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.Identity.Core.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.Facebook.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.Cookies.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.OAuth.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.Google.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.Twitter.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\obj\Debug\Drill_Sim_backup2.csprojResolveAssemblyReference.cache
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\obj\Debug\Drill_Sim.dll
+C:\ASP projects\Win7 drill_sim_backup _Mara\ASP projects\Drill_Sim\obj\Debug\Drill_Sim.pdb
+F:\shared_project\drillsim\Drill_Sim\bin\Drill_Sim.dll.config
+F:\shared_project\drillsim\Drill_Sim\bin\Drill_Sim.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Drill_Sim.pdb
+F:\shared_project\drillsim\Drill_Sim\bin\Antlr3.Runtime.dll
+F:\shared_project\drillsim\Drill_Sim\bin\EntityFramework.dll
+F:\shared_project\drillsim\Drill_Sim\bin\EntityFramework.SqlServer.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.Core.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.SignalR.Core.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Cookies.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Facebook.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Google.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.OAuth.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Twitter.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Web.Infrastructure.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Newtonsoft.Json.dll
+F:\shared_project\drillsim\Drill_Sim\bin\Owin.dll
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.Helpers.dll
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.Mvc.dll
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.Optimization.dll
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.Razor.dll
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.WebPages.Deployment.dll
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.WebPages.dll
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.WebPages.Razor.dll
+F:\shared_project\drillsim\Drill_Sim\bin\WebGrease.dll
+F:\shared_project\drillsim\Drill_Sim\bin\EntityFramework.xml
+F:\shared_project\drillsim\Drill_Sim\bin\EntityFramework.SqlServer.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.SignalR.Core.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.Helpers.xml
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.Mvc.xml
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.Optimization.xml
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.Razor.xml
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.WebPages.xml
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.WebPages.Deployment.xml
+F:\shared_project\drillsim\Drill_Sim\bin\System.Web.WebPages.Razor.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Antlr3.Runtime.pdb
+F:\shared_project\drillsim\Drill_Sim\bin\Newtonsoft.Json.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.Core.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Facebook.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Cookies.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.OAuth.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Google.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Twitter.xml
+F:\shared_project\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\shared_project\drillsim\Drill_Sim\obj\Debug\Drill_Sim_backup2.csprojResolveAssemblyReference.cache
+F:\shared_project\drillsim\Drill_Sim\obj\Debug\Drill_Sim.dll
+F:\shared_project\drillsim\Drill_Sim\obj\Debug\Drill_Sim.pdb
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Drill_Sim.dll.config
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Drill_Sim.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Drill_Sim.pdb
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Antlr3.Runtime.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\EntityFramework.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\EntityFramework.SqlServer.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.Core.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.Owin.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.SignalR.Core.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Cookies.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Facebook.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Google.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.OAuth.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Twitter.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Web.Infrastructure.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Newtonsoft.Json.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Owin.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.Helpers.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.Mvc.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.Optimization.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.Razor.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.WebPages.Deployment.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.WebPages.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.WebPages.Razor.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\WebGrease.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\EntityFramework.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\EntityFramework.SqlServer.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.SignalR.Core.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.Helpers.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.Mvc.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.Optimization.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.Razor.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.WebPages.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.WebPages.Deployment.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\System.Web.WebPages.Razor.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Antlr3.Runtime.pdb
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Newtonsoft.Json.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.Core.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.Owin.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Facebook.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Cookies.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.OAuth.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Google.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.Twitter.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\obj\Debug\Drill_Sim_backup2.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\obj\Debug\Drill_Sim.dll
+\\psf\Home\Desktop\shit\mara ds\ASP projects\drillsim\Drill_Sim\obj\Debug\Drill_Sim.pdb
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Drill_Sim.dll.config
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Drill_Sim.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Drill_Sim.pdb
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Antlr3.Runtime.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\EntityFramework.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\EntityFramework.SqlServer.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.Identity.Core.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.Identity.Owin.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.SignalR.Core.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.Cookies.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.Facebook.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.Google.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.OAuth.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.Twitter.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Web.Infrastructure.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Newtonsoft.Json.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Owin.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.Helpers.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.Mvc.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.Optimization.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.Razor.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.WebPages.Deployment.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.WebPages.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.WebPages.Razor.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\WebGrease.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\EntityFramework.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\EntityFramework.SqlServer.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.SignalR.Core.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.Helpers.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.Mvc.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.Optimization.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.Razor.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.WebPages.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.WebPages.Deployment.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\System.Web.WebPages.Razor.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Antlr3.Runtime.pdb
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Newtonsoft.Json.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.Identity.Core.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.Identity.Owin.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Host.SystemWeb.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.Facebook.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.Cookies.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.OAuth.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.Google.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.Twitter.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\obj\Debug\Drill_Sim_backup2.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\obj\Debug\Drill_Sim.dll
+\\psf\Home\Desktop\well_killing ds\Drill_Sim\obj\Debug\Drill_Sim.pdb
