@@ -14,6 +14,7 @@ var practice_form_validated = false;
 var redirect_url = null;
 var added = false;
 var statusHandler = null;
+var exam_status = false;
 
 /*
 function Simulation(){
@@ -98,8 +99,6 @@ function login(id) { // called from cshtml
     // kakoi snapshot vibrali i kakogo burilwika (to est ego uid)
     if (isSupervisor || isUniversal) { // not specified in exam input form
         send_data_async(); // send cur_user_id, role, 
-    } else {
-        $(id).submit();
     }
 }
 
@@ -111,17 +110,11 @@ function check_status() {
             if (data != null) {
                 window.location.href = data; // redirect to exam
             } else {
-                console.log("url is null");
+                console.log("redirect url is null");
             }
         }
     });
     //window.location.href = redirect_url.replace("Standalone", "Exam");
-}
-
-// exam login
-function login_exam() {
-    startLoadingAnimation();
-    $("#exam_form").submit();
 }
 
 function add_to_wait_list() {
@@ -156,11 +149,16 @@ function fill_form(result) {
         document.getElementById('exam_input_5').value = result.course_name;
         document.getElementById('exam_input_6').value = result.ip_num;
         document.getElementById('exam_input_7').value = result.diff_lvl;
+        exam_status = true;
     }
 }
 
 function fill_practice_form(result) {
+    if (work_mode_set) {
+        console.log("snapshot button clicked, redirecting... : " + result.RedirectUrl);
+    }
     if (result.RedirectUrl && work_mode_set) { // vtoroi raz s Logina priwli, s snapshot button on click cshtml vizvali
+        console.log("redirecting... to: " + result.RedirectUrl);
         window.location.href = result.RedirectUrl;
     }
     if (result.is_success) {
@@ -304,13 +302,11 @@ function get_snapshots() {
             var len = data.length;
             for (i = 0; i < len; i++) {
                 snapshots.push(new Snapshot(data[i].id, data[i].name, data[i].description));
-                $('#selectable_snap').append('<li class="ui-widget-content"><p>' + (parseInt(i, 10) + 1) + '. ' + data[i].name + '</p><p>' + data[i].description + '</p></li>');
+                $('#selectable_snap').append('<li class="ui-widget-content ui-selectee"><p class="snapshot_file">' + (parseInt(i, 10) + 1) + '. ' + data[i].name + '</p><p class="snapshot_description">' + data[i].description + '</p></li>');
             }
         }
     });
 }
-
-
 
 $(document).ready(function () {
 	repaint_window('on');
@@ -405,12 +401,17 @@ $(document).ready(function () {
 			display:'inline-block'}).animate({
 				opacity:1
 			},500);
-
     }
-
 	});
 
-	$(".practice_exam_next_icon").click(function(){
+	$('.exam_button').click(function () {
+	    if (exam_status) {
+	        startLoadingAnimation();
+	        $("#exam_form").submit();
+	    }
+	});
+
+	$(".practice_next_button_1").click(function () {
 		$('.practice_auth').css({
 			opacity:1,
 			display:'none'}).animate({
@@ -423,7 +424,6 @@ $(document).ready(function () {
 				opacity:1
 			},500);
 	});
-
 
 	$("#driller,#driller_supervisor,#supervisor").click(function(){
 		$("#driller,#driller_supervisor,#supervisor").css("background-color","#2D2D32");
@@ -450,8 +450,7 @@ $(document).ready(function () {
 		}
 	});
 
-
-	$(".practice_exam_next_icon_2").click(function(){
+	$(".practice_next_button_2").click(function () {
 	    if (isUniversal == 1 || isSupervisor == 1) { // draw css and send request to server and get JSON 
 		$('.driller_choice').css({
 			opacity:0,
@@ -460,7 +459,10 @@ $(document).ready(function () {
 			},500);
 			$(".practice_auth_2").css("margin-left","28%");
 	    } else if (isDriller == 1) { // stop scenario, proceed to /User/Standalone
-	        $('.snapshot_button').click(); // calls practice form submit in cshtml
+	        if (work_mode_set) {
+	            $('#practice_form').submit();
+	            return;
+	        }
 	    }
 	    // after animate send request append
 	    $.ajax({
@@ -484,7 +486,6 @@ $(document).ready(function () {
 	    });
 	});
 
-
 	$(function() {
     $( "#selectable").selectable({
       stop: function() {
@@ -496,7 +497,6 @@ $(document).ready(function () {
     	});
   	});
 
-
 	$(function() {
     $( "#selectable_snap").selectable({
       stop: function() {
@@ -507,9 +507,7 @@ $(document).ready(function () {
     	});
   	});
 
-
-	$(".drillers_next_icon").click(function(){
-		
+	$(".drillers_next_button").click(function () {
 		if(indexOfChosenDriller==-1){
 			alert("Choose Driller");
 		}else{
@@ -536,17 +534,12 @@ $(document).ready(function () {
 	});
 
 	$(".snapshot_button").click(function(){
-		
 		if(indexOfChosenSnapshot==-1 && (isSupervisor == 1 || isUniversal == 1)){
 			alert("Choose Snapshot");
 		}else{
 		}
 	});
-
-
-
 });
-
 
 $(window).on("fullscreen-on", function(){
 	repaint_window('on');

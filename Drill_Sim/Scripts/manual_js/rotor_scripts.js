@@ -104,6 +104,7 @@ var d = new Date();
 //29.03.2016
 
 var lever_head_level_fullscreen_on_off = -1;
+var lever_images = [];//used to cache rotor area lever background images 
 var left_metre_on_off = 1;
 var right_metre_on_off = 1;
 
@@ -216,7 +217,7 @@ $(function () {
 
     socket = $.connection.trackHub;
     socket.client.notify = function (name) {
-        console.log(name + " joined team!");
+        start_timers();
     }
 
     socket.client.updateBitPos = function (val) {
@@ -229,7 +230,7 @@ $(function () {
         if (snp_id != null) {
             socket.server.getSnapshot(snp_id).done(function (snp) {
                 s = snp;
-                console.log("SOCKET DATA RECEIVED: " + s.MD);
+                console.log("driller received snapshot: " + s.MD);
                 s.BitPos = 5625;
                 stopLoadingAnimation();
                 graph_timer = setInterval(graph_store_statistics, 1 * 1000);
@@ -303,6 +304,7 @@ function initialize_practice() {
     } else {
         roomName = $('#partner_uid').val();
         socket.server.joinRoom(roomName, role);
+        start_timers();
         // remove driller from available to join list // online drillers
         socket.server.occupy(roomName);
     }
@@ -395,111 +397,49 @@ function changeMenuDiv(menuID) {
 }
 //end
 
-/*29.03.2016*/
-
-function rotate_pvo_left_left_top_metre_arrow(value) {
+//pvo metres arrows rotate functions
+function rotate_pvo_left_metre1_arrow(value) {
     var angle;
-
-    angle = value * 243 / 200;
-
+    angle = value * 243 / 210;
     $('.pvo_left_left_top_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-
-    var decimal_places = 0;
-    var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
-
-    $('.pvo_left_left_top_indicator_text')
-    .prop('number', cur_value_pvo_left_left_top_metre * decimal_factor)
-    .animateNumber(
-      {
-          number: value * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
+    animateTextNumber(0, '.pvo_left_left_top_indicator_text', cur_value_pvo_left_left_top_metre, value);
     cur_value_pvo_left_left_top_metre = value;
 }
 
-
-function rotate_pvo_left_right_top_metre_arrow(value) {
+function rotate_pvo_left_metre2_arrow(value) {
     var angle;
-
-    angle = value * 243 / 200;
-
+    angle = value * 243 / 210;
     $('.pvo_left_right_top_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-
-    var decimal_places = 0;
-    var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
-
-    $('.pvo_left_right_top_indicator_text')
-    .prop('number', cur_value_pvo_right_left_metre * decimal_factor)
-    .animateNumber(
-      {
-          number: value * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
+    animateTextNumber(0, '.pvo_left_right_top_indicator_text', cur_value_pvo_right_left_metre, value);
     cur_value_pvo_right_left_metre = value;
 }
 
-
-function rotate_pvo_right_left_metre_arrow(value) {
+function rotate_pvo_right_metre1_arrow(value) {
     var angle;
-
     angle = value * 243 / 200;
-
     $('.pvo_right_left_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-
-    var decimal_places = 0;
-    var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
-
-    $('.pvo_right_left_indicator_text')
-    .prop('number', cur_value_pvo_left_right_top_metre * decimal_factor)
-    .animateNumber(
-      {
-          number: value * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
+    animateTextNumber(0, '.pvo_right_left_indicator_text', cur_value_pvo_left_right_top_metre, value);
     cur_value_pvo_left_right_top_metre = value;
 }
 
-/*02.04.2016*/
+function rotate_pvo_right_metre2_arrow(value) {
+    var angle;
+    angle = value * 243 / 40;
+    $('.pvo_right_right_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
+    animateTextNumber(0, '.pvo_right_right_indicator_text', cur_value_pvo_right_right_metre, value);
+    cur_value_pvo_right_right_metre = value;
+}
+//end
 
+//valves metres arrow rotate function
+function rotate_valves_metre_arrows(value, id) {
+    var angle;
+    angle = (value * 100) * 180 / 100;
+    $('.valves_metre_part_' + id + '_metre_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
+    animateTextNumber(1, '.valves_metre_part_' + id + '_metre_indicator_text', cur_values_valves_metre[id], value);
+    cur_values_valves_metre[id] = value;
+}
+//end
 function set_pvo_timer() {
     var pressTimer;
 
@@ -519,74 +459,6 @@ function set_pvo_timer() {
     });
 }
 
-
-function rotate_pvo_right_right_metre_arrow(value) {
-    var angle;
-
-    angle = value * 243 / 40;
-
-    $('.pvo_right_right_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-
-    var decimal_places = 0;
-    var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
-
-    $('.pvo_right_right_indicator_text')
-    .prop('number', cur_value_pvo_right_right_metre * decimal_factor)
-    .animateNumber(
-      {
-          number: value * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
-    cur_value_pvo_right_right_metre = value;
-}
-
-/*29.03.2016*/
-
-function rotate_valves_metre_arrows(value, id) {
-    var angle;
-
-    angle = (value * 100) * 180 / 100;
-    $('.valves_metre_part_' + id + '_metre_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-    var decimal_places = 0;
-    var decimal_factor = decimal_places === 0 ? 100 : decimal_places * 1000;
-
-
-    $('.valves_metre_part_' + id + '_metre_indicator_text')
-    .prop('number', cur_values_valves_metre[id] * decimal_factor)
-    .animateNumber(
-      {
-          number: value * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
-    cur_values_valves_metre[id] = value;
-}
-
 function repaintRotor(type) {
     if (type == 0) {
         $(".rotor_slider_div").html("");
@@ -604,114 +476,61 @@ function repaintRotor(type) {
     }
 }
 
-/*02.04.2016*/
-
-
-//panels
-function rotate_panel_left_left_metre_arrow(value) {
+//panels metres arrow rotate functions
+function rotate_supervisor_panel_left_metre_arrow(value) {
     var angle;
-
     angle = value * 243 / 200;
-
     $('.panel_left_left_part1_metre_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-
-    var decimal_places = 0;
-    var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
-
-    $('.panel_left_left_part1_indicator_text')
-    .prop('number', cur_value_panels_left_left_part1_metre * decimal_factor)
-    .animateNumber(
-      {
-          number: value * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
+    animateTextNumber(0, '.panel_left_left_part1_indicator_text', cur_value_panels_left_left_part1_metre, value);
     cur_value_panels_left_left_part1_metre = value;
 }
 
-function rotate_panel_left_right_1_metre_arrow(value) {
+function rotate_supervisor_panel_right_metre1_arrow(value) {
     var angle;
-
     angle = value * 243 / 200;
-
     $('.panel_left_right_part1_metre_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-
-    var decimal_places = 0;
-    var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
-
-    $('.panel_left_right_part1_indicator_text')
-    .prop('number', cur_value_panels_left_right_part1_metre * decimal_factor)
-    .animateNumber(
-      {
-          number: value * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
+    animateTextNumber(0, '.panel_left_right_part1_indicator_text', cur_value_panels_left_right_part1_metre, value);
     cur_value_panels_left_right_part1_metre = value;
 }
 
-function rotate_panel_left_right_2_metre_arrow(value) {
+function rotate_supervisor_panel_right_metre2_arrow(value) {
     var angle;
-
     angle = (value * 100) * 180 / 100;
-
     $('.panel_left_right_part2_metre_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
+    animateTextNumber(1, '.panel_left_right_part2_indicator_text', cur_value_panels_left_right_part2_metre, value);
+    cur_value_panels_left_right_part2_metre = value;
+}
+//end
 
+function animateTextNumber(decimal_places, text_class_id, fromValue, toValue) {
+    switch (decimal_places) {
+        case 1:
+        case 0:
+            var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
+            break;
 
-    var decimal_places = 0;
-    var decimal_factor = decimal_places === 0 ? 100 : decimal_places * 1000;
+        case 3:
+            var decimal_factor = decimal_places === 1 ? 2 : decimal_places * 1000;
+            break;
+    }
 
-    $('.panel_left_right_part2_indicator_text')
-    .prop('number', cur_value_panels_left_right_part2_metre * decimal_factor)
+    $(text_class_id)
+    .prop('number', fromValue * decimal_factor)
     .animateNumber(
       {
-          number: value * decimal_factor,
-
+          number: toValue * decimal_factor,
           numberStep: function (now, tween) {
               var floored_number = Math.floor(now) / decimal_factor,
                   target = $(tween.elem);
               if (decimal_places > 0) {
                   floored_number = floored_number.toFixed(decimal_places);
               }
-
               target.text(floored_number);
           }
       },
       1500
     );
-    cur_value_panels_left_right_part2_metre = value;
 }
-
-//end
-
-
-
-
-
 
 // observer object class
 var obs = {
@@ -760,76 +579,25 @@ function draw_right_range(startAng, endAng) {
     vis_r.append("path").attr("d", arc).attr("transform", "translate(" + tx_r + "," + ty_r + ")").attr("fill", "#009933");
 }
 
-function rotate_left_arrow_1(value_percentage) {
-
+//rotor area metres arrow rotate functions
+function rotate_rotor_area_left_arrow(value_percentage) {
     var angle;
-    if (value_percentage <= (9200 / 239)) {
-        angle = -92 + value_percentage * 2.39;
-    } else angle = -92 + value_percentage * 2.39;
-
+    angle = value_percentage * 2.43;
     $('.left_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-
-    var decimal_places = 1;
-    var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
-
-    $('.left_indicator_text')
-    .prop('number', cur_percentage_left * decimal_factor)
-    .animateNumber(
-      {
-          number: value_percentage * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
+    animateTextNumber(1, '.left_indicator_text', cur_percentage_left, value_percentage);
     cur_percentage_left = value_percentage;
 }
 
-
-function rotate_right_arrow_1(value_volume) {
-
+function rotate_rotor_area_right_arrow(value_volume) {
     var angle;
     if (value_volume <= 0) {
         angle = value_volume * 15.25;
     } else angle = value_volume * 14.875;
-
     $('.right_arrow_icon').rotate({ animateTo: angle, duration: 2000 });
-
-
-    var decimal_places = 3;
-    var decimal_factor = decimal_places === 1 ? 2 : decimal_places * 1000;
-
-    $('.right_indicator_text')
-    .prop('number', cur_volume_right * decimal_factor)
-    .animateNumber(
-      {
-          number: value_volume * decimal_factor,
-
-          numberStep: function (now, tween) {
-              var floored_number = Math.floor(now) / decimal_factor,
-                  target = $(tween.elem);
-              if (decimal_places > 0) {
-                  floored_number = floored_number.toFixed(decimal_places);
-              }
-
-              target.text(floored_number);
-          }
-      },
-      1500
-    );
-
+    animateTextNumber(3, '.right_indicator_text', cur_volume_right, value_volume);
     cur_volume_right = value_volume;
 }
+//end
 
 function drawSlider() {
 
@@ -926,7 +694,12 @@ function drawSlider_3() {
 }
 //end
 
-
+function cache_lever_images() {
+    for (i = 1; i <= 24; i++) {
+        lever_images[i] = new Image();
+        lever_images[i].src = imagePath + "lever_images/lever_" + (parseInt(i, 10)) + ".png";
+    }
+}
 
 function repaint_window(onOff) {
     var width = $(window).width();
@@ -947,34 +720,9 @@ function repaint_window(onOff) {
 
     content_width = $(".container").width();
 
-    $('.header').height($(".container").height() * 0.106);
-    $('.menu').height($(".container").height() * 0.106);
-    $('.state_and_time').height($(".container").height() * 0.106);
-    $('.content').height($(".container").height() * 0.874);
-
-    for (i = 1; i <= 6; i++) {
-        $('#menu-' + i).height($(".container").height() * 0.106);
-    }
-
-
-    $('.selected').height($(".container").height() * 0.106 * 0.1);
-
-    $('.timer_and_date').height($(".container").height() * 0.106 * 0.40);
-    $('.state_control').height($(".container").height() * 0.106 * 0.535);
-    $('.state').height($(".container").height() * 0.106 * 0.535);
-
-
-    $('#left_content_1').height($(".container").height() * 0.874 * 0.2898);
-    $('#left_content_2').height($(".container").height() * 0.874 * 0.4692);
-    $('#left_content_3').height($(".container").height() * 0.874 * 0.2111);
-
-
-
-
     var brake_fraction = ($('.brake_back').height() - $('.lever_head').height()) / 13;
     var down_range = ($('.brake_back').position().top + $('.brake_back').height()) - $('.lever_head').height();
     var up_range = $('.brake_back').position().top;
-
 
     if (onOff == 'on' || onOff == 'off') {
         if (lever_head_level_fullscreen_on_off == 1) {
@@ -1028,149 +776,137 @@ function repaint_window(onOff) {
         }
     }
 
-    /*        29.03.2016*/
     $('.lever_head').on('mousedown', function (e) {
         e.preventDefault();
         lever_head_dragging = true;
     });
 
-
-
     $(document).on('mousemove', function (me) {
-
         if (lever_head_dragging == true) {
-
             if ($('.lever_head').position().top <= down_range + 10 && $('.lever_head').position().top >= (down_range - brake_fraction / 2)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_1.png" });
+                $('img[class="lever"]').attr({ src: lever_images[1].src });
                 lever_head_level_fullscreen_on_off = 1;
             }
 
             if ($('.lever_head').position().top <= (down_range - brake_fraction / 2) && $('.lever_head').position().top >= (down_range - brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_1.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[2].src });
                 lever_head_level_fullscreen_on_off = 2;
             }
 
             if ($('.lever_head').position().top < (down_range - brake_fraction) && $('.lever_head').position().top >= (down_range - 1.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_2.png" });
+                $('img[class="lever"]').attr({ src: lever_images[3].src });
                 lever_head_level_fullscreen_on_off = 3;
             }
 
             if ($('.lever_head').position().top < (down_range - 1.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 2 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_2.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[4].src });
                 lever_head_level_fullscreen_on_off = 4;
             }
 
             if ($('.lever_head').position().top < (down_range - 2 * brake_fraction) && $('.lever_head').position().top >= (down_range - 2.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_3.png" });
+                $('img[class="lever"]').attr({ src: lever_images[5].src });
                 lever_head_level_fullscreen_on_off = 5;
             }
 
             if ($('.lever_head').position().top < (down_range - 2.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 3 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_3.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[6].src });
                 lever_head_level_fullscreen_on_off = 6;
             }
 
             if ($('.lever_head').position().top < (down_range - 3 * brake_fraction) && $('.lever_head').position().top >= (down_range - 3.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_4.png" });
+                $('img[class="lever"]').attr({ src: lever_images[7].src });
                 lever_head_level_fullscreen_on_off = 7;
             }
 
             if ($('.lever_head').position().top < (down_range - 3.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 4 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_4.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[8].src });
                 lever_head_level_fullscreen_on_off = 8;
             }
 
             if ($('.lever_head').position().top < (down_range - 4 * brake_fraction) && $('.lever_head').position().top >= (down_range - 4.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[9].src });
                 lever_head_level_fullscreen_on_off = 9;
             }
 
             if ($('.lever_head').position().top < (down_range - 4.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_5.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[10].src });
                 lever_head_level_fullscreen_on_off = 10;
             }
 
             if ($('.lever_head').position().top < (down_range - 5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 5.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_6.png" });
+                $('img[class="lever"]').attr({ src: lever_images[11].src });
                 lever_head_level_fullscreen_on_off = 11;
             }
 
             if ($('.lever_head').position().top < (down_range - 5.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 6 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_6.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[12].src });
                 lever_head_level_fullscreen_on_off = 12;
             }
 
             if ($('.lever_head').position().top < (down_range - 6 * brake_fraction) && $('.lever_head').position().top >= (down_range - 7 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_7.png" });
+                $('img[class="lever"]').attr({ src: lever_images[13].src });
                 lever_head_level_fullscreen_on_off = 13;
             }
 
             if ($('.lever_head').position().top < (down_range - 7 * brake_fraction) && $('.lever_head').position().top >= (down_range - 8 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_8.png" });
+                $('img[class="lever"]').attr({ src: lever_images[14].src });
                 lever_head_level_fullscreen_on_off = 14;
             }
 
             if ($('.lever_head').position().top < (down_range - 8 * brake_fraction) && $('.lever_head').position().top >= (down_range - 8.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_8.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[15].src });
                 lever_head_level_fullscreen_on_off = 15;
             }
 
             if ($('.lever_head').position().top < (down_range - 8.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 9 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_9.png" });
+                $('img[class="lever"]').attr({ src: lever_images[16].src });
                 lever_head_level_fullscreen_on_off = 16;
             }
 
             if ($('.lever_head').position().top < (down_range - 9 * brake_fraction) && $('.lever_head').position().top >= (down_range - 9.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_9.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[17].src });
                 lever_head_level_fullscreen_on_off = 17;
             }
 
             if ($('.lever_head').position().top < (down_range - 9.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 10 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_10.png" });
+                $('img[class="lever"]').attr({ src: lever_images[18].src });
                 lever_head_level_fullscreen_on_off = 18;
             }
 
             if ($('.lever_head').position().top < (down_range - 10 * brake_fraction) && $('.lever_head').position().top >= (down_range - 10.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_10.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[19].src });
                 lever_head_level_fullscreen_on_off = 19;
             }
 
             if ($('.lever_head').position().top < (down_range - 10.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 11 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_11.png" });
+                $('img[class="lever"]').attr({ src: lever_images[20].src });
                 lever_head_level_fullscreen_on_off = 20;
             }
 
             if ($('.lever_head').position().top < (down_range - 11 * brake_fraction) && $('.lever_head').position().top >= (down_range - 11.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_11.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[21].src });
                 lever_head_level_fullscreen_on_off = 21;
             }
 
             if ($('.lever_head').position().top < (down_range - 11.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 12 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_12.png" });
+                $('img[class="lever"]').attr({ src: lever_images[22].src });
                 lever_head_level_fullscreen_on_off = 22;
             }
 
             if ($('.lever_head').position().top < (down_range - 12 * brake_fraction) && $('.lever_head').position().top >= (down_range - 12.5 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_12.5.png" });
+                $('img[class="lever"]').attr({ src: lever_images[23].src });
                 lever_head_level_fullscreen_on_off = 23;
             }
 
             if ($('.lever_head').position().top < (down_range - 12.5 * brake_fraction) && $('.lever_head').position().top >= (down_range - 13 * brake_fraction)) {
-                $('img[class="lever"]').attr({ src: imagePath + "lever_images/lever_13.png" });
+                $('img[class="lever"]').attr({ src: lever_images[24].src });
                 lever_head_level_fullscreen_on_off = 24;
             }
-
         }
     });
 
-    /*        29.03.2016*/
-
-
     draw_left_range($('#left_up_range_text').text(), $('#left_down_range_text').text());
     draw_right_range($('#right_up_range_text').text(), $('#right_down_range_text').text());
-
-
-    $('.left_restart,.right_restart,.left_ranges,.right_ranges').css("border-width", $('.left_restart').width() / 25 + "px");
 
     $(".slider_regulator").css("display", "block");
     slider_left_range = $('.slider_track').offset().left;
@@ -1199,14 +935,10 @@ function repaint_window(onOff) {
     sliderFraction_3 = ($('.slider_track_3').width() - $('.slider_runner_div_3').width()) / 30;
     slider_3_right_range = $('.slider_track_3').offset().left + $('.slider_track_3').width() - $('.slider_runner_div_3').width();
     $('.slider_runner_div_3').css("left", sliderFraction_3 * slider_4_value);
-    $(".slider_regulator_3,.supervisor_panel").css("display", "none");
     //end
 
-    /*28.03.2016*/
     $(".slider_regulator_3").css("display", "none");
-    $(".slider_regulator_3,.supervisor_panel").css("display", "none");
-    /*28.03.2016*/
-
+    if (current_menu_id != 3) $(".slider_regulator_3,.supervisor_panel").css("display", "none");
 }
 
 //slugging
@@ -1293,7 +1025,7 @@ function do_preliminary() {
         // setting long click to pvo_apply
         calc_pitrange();
         set_pvo_timer();
-        rotate_pvo_left_left_top_metre_arrow(s.APMPi);
+        rotate_pvo_left_metre1_arrow(s.APMPi);
         // in case move_up, move_down not called even once, calc dplen before calculating pogpm
         calc_dplen();
         // shitaem faktor plavuchesti and pervonachalniy ves na kruke bez dinamiki
@@ -1304,7 +1036,7 @@ function do_preliminary() {
         // predvaritelnie vi4isleniya dlya davleniy na stoyake, dplen poshitano
         set_init();
         do_precalculations();
-        rotate_pvo_left_right_top_metre_arrow(s.MPi);
+        rotate_pvo_left_metre2_arrow(s.MPi);
     }
 }
 
@@ -2067,7 +1799,7 @@ function calculate_pogpm_new() {
     //console.log("%cPogpm val: " + s.POgpm, "background: red, font: white");
     s.FLAL = s.POgpm / 5.28;
     // postavit strelky na flal;
-    rotate_left_arrow_1(s.FLAL);
+    rotate_rotor_area_left_arrow(s.FLAL);
     var low = $('#left_down_range_text').html(); var high = $('#left_up_range_text').html();
     //console.log("LOW AND HIGH: " + low + " " + high);
     var res = in_range(s.FLAL, low, high);
@@ -2291,7 +2023,7 @@ function preventer_calculations() {
     s.Vga = (vgi + s.VCls1) - s.Vmap;
     s.APMPa = vgi * s.APMPi / s.Vga;
     if (prev_sec % 3 == 0) {
-        rotate_pvo_left_left_top_metre_arrow(s.APMPa);
+        rotate_pvo_left_metre1_arrow(s.APMPa);
     }
     s.APa = vgi * s.APi / s.Vga;
     // na sApa крутить 3 спидомоетр
@@ -2348,11 +2080,14 @@ function start_timers() {
 }
 
 $(document).ready(function () {
+
+    if (role == "universal") {
+        start_timers();
+    }
     /*
     space key listener for testing CumMV2, hmva2
     */
     time_handler = setInterval(function () { $('.date_text').html(moment().format('LT')); }, 1 * 1000);
-    start_timers();
     window.onkeyup = function (e) {
         if (e.keyCode == 32) {
             s.CumMV2 = 1000;
@@ -2398,14 +2133,15 @@ $(document).ready(function () {
         console.log("cur mw: " + s.MW);
     });
 
+    cache_lever_images();
     repaint_window('ready');
 
     if (role == 'supervisor') {
         changeMenuDiv('3');
     }
 
-    rotate_left_arrow_1(100);
-    rotate_right_arrow_1(-8);
+    rotate_rotor_area_left_arrow(100);
+    rotate_rotor_area_right_arrow(-8);
 
     $('.lever_head').draggable({
         axis: "y",
@@ -2677,7 +2413,7 @@ $(document).ready(function () {
         if (left_metre_on_off == 1) {
             var vis = d3.select("#left_range");
             vis.selectAll("*").remove();
-            rotate_left_arrow_1(0);
+            rotate_rotor_area_left_arrow(0);
             $(".left_metre").css("background-image", "url(" + imagePath + "left_metre_1_off.svg)");
             $(".left_metre_switch").text("ВЫКЛ").css("background-color", "#2D2D32").css("color", "#808080");
             $(".left_ranges").css("cursor", "default");
@@ -2695,7 +2431,7 @@ $(document).ready(function () {
         if (right_metre_on_off == 1) {
             var vis = d3.select("#right_range");
             vis.selectAll("*").remove();
-            rotate_right_arrow_1(0);
+            rotate_rotor_area_right_arrow(0);
             $(".right_metre").css("background-image", "url(" + imagePath + "right_metre_1_off.svg)");
             $(".right_metre_switch").text("ВЫКЛ").css("background-color", "#2D2D32").css("color", "#808080");
             $(".right_ranges").css("cursor", "default");
@@ -2950,9 +2686,9 @@ $(document).ready(function () {
 
     //panels
 
-    rotate_panel_left_left_metre_arrow(170);
-    rotate_panel_left_right_1_metre_arrow(150);
-    rotate_panel_left_right_2_metre_arrow(0.5);
+    rotate_supervisor_panel_left_metre_arrow(170);
+    rotate_supervisor_panel_right_metre1_arrow(150);
+    rotate_supervisor_panel_right_metre2_arrow(0.5);
 
     $(".panel_left_right_pump_part3_regulator_turning").click(function () {
         $(".slider_regulator_3").css("display", "block");
@@ -3007,9 +2743,9 @@ $(document).ready(function () {
 
     /*29.03.2016*/
 
-    //rotate_pvo_left_left_top_metre_arrow(0);
-    rotate_pvo_right_left_metre_arrow(200);
-    rotate_pvo_right_right_metre_arrow(40);
+    //rotate_pvo_left_metre1_arrow(0);
+    rotate_pvo_right_metre1_arrow(200);
+    rotate_pvo_right_metre2_arrow(40);
 
 
 
@@ -3068,7 +2804,7 @@ $(document).ready(function () {
                     s.Vga = vgi + s.VCls1;
                     console.log("s.Vma: " + s.Vma + " : " + "s.Vga: " + s.Vga);
                     s.APMPa = vgi * s.APMPi / s.Vga;
-                    rotate_pvo_left_left_top_metre_arrow(s.APMPa);
+                    rotate_pvo_left_metre1_arrow(s.APMPa);
                     s.APa = vgi * s.APi / s.Vga;
                     console.log("APMPa and APa: " + s.APMPa + "  " + s.APa);
                     if (s.APa < s.APi && s.APMPa < s.APMPi) {
@@ -3118,7 +2854,7 @@ $(document).ready(function () {
                 s.Vga = (vgi + s.VCls1) - s.Vmap + s.VOpn6;
                 s.Mpa = vgi * s.MPi / s.Vga;
                 s.APa = vgi * s.APi / s.Vga;
-                rotate_pvo_left_right_top_metre_arrow(s.Mpa);
+                rotate_pvo_left_metre2_arrow(s.Mpa);
                 console.log("vga mpa apa: " + s.Vga + " " + s.Mpa + " " + s.APa);
                 if (s.APa < s.APi && s.Mpa < s.MPi) {
                     // start pump

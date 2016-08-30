@@ -232,13 +232,15 @@ body {
 	height: 100%;
 	float: right;
 }
-
-.restart_icon{
+.instructor_login_submit_btn{
 	width: 68%;
 	vertical-align: middle;
 	cursor: pointer;
+    display: inline-block;
 }
-
+.restart_icon{
+    width:100%;
+}
 
 /*////////////////////////////////////////////*/
 
@@ -464,10 +466,15 @@ body {
 	float: right;
 }
 
- .exam_next_icon{
- 	width: 55%;
+ .exam_button{
+ 	display: inline-block;
+    width: 55%;
  	vertical-align: middle;
  	cursor: pointer;
+ }
+
+ .exam_next_icon{
+     width: 100%;
  }
 
  /*/////////////////////////////////////*/
@@ -552,10 +559,15 @@ body {
 	float: right;
 }
 
-.practice_exam_next_icon{
- 	width: 55%;
+.practice_next_button_1 {
+    display: inline-block;
+    width: 55%;
  	vertical-align: middle;
  	cursor: pointer;	
+}
+
+.practice_exam_next_icon{
+    width: 100%;
 }
 
 /*///////////////////////////////////////////*/
@@ -588,10 +600,15 @@ body {
 	border-color: #999999;	
  }
 
- .practice_exam_next_icon_2{
- 	width: 55%;
+.practice_next_button_2{
+    display:inline-block;
+    width: 55%;
  	vertical-align: middle;
  	cursor: pointer;	
+}
+
+ .practice_exam_next_icon_2{
+    width:100%;
  }
 
  #position_choice{
@@ -749,11 +766,16 @@ body {
 	float: right;
 }
 
-.drillers_next_icon_div{
-	width: 100%;
+.drillers_next_button {
+	display: inline-block;
+    width: 100%;
 	height: 23%;
 	position: relative;
 	top: 77%;
+}
+
+.drillers_next_icon_div{
+    width: 100%;
 }
 
 .drillers_next_icon{
@@ -882,8 +904,6 @@ body {
 	text-overflow: ellipsis;
 }
 
-
-
 .snapshot_div_right{
 	width: 15%;
 	height: 100%;
@@ -899,9 +919,14 @@ body {
 }
 
 .snapshot_button{
+    display: inline-block;
 	width: 67%;
 	vertical-align: middle;
 	cursor: pointer;
+}
+
+.snapshot_button_icon{
+    width: 100%;
 }
 
 .loader_div{

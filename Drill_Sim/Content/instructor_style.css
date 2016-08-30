@@ -12,7 +12,7 @@
     border-right: 0.32em solid #232328;
 }
 .menu table table{
-    height: 94%;
+    height: 94.4%;
     font-size: 81%;
     color: #B3B3B3;
 }
@@ -73,6 +73,16 @@
     background-color: #FFFFFF;
     position: relative;
     display: none;
+}
+.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result{
+	background-color: #2d2d32;
+	width: 99.28%;
+	height: 87.4%;
+	margin-left: 0.36%;
+	margin-right: 0.36%;
+	position: relative;
+	top: 1.40%;
+	display: none;		
 }
 /*///////////////////////////////////*/
 .instructor_data_settings_container{
@@ -716,7 +726,7 @@
     background-color: #FF0000;
     opacity: 0.3;
 }
-.instructor_complications_content_right_1 table tr:last-child td:last-child button,.instructor_complications_content_right_2 table tr:last-child td:last-child button,{
+.instructor_complications_content_right_1 table tr:last-child td:last-child button,.instructor_complications_content_right_2 table tr:last-child td:last-child button{
     background-color: #009933;
 }
 .instructor_complications_content_right_1 img,.instructor_complications_content_right_2 img{
@@ -1031,8 +1041,8 @@
 }
 .simulation_creation_content_left .main{
     width: 100%;
-    background-color: #666666;    
-    cursor: default;
+    background-color: #666666; 
+    cursor: default;   
 }
 .simulation_creation_content_left .main img,.simulation_creation_content_left .hidden img{
     width: 15%;
@@ -1556,8 +1566,13 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: url(images/instructor_page_left_background.svg) no-repeat top left;
-    background-size: 99.2%;  
+    /*background: url(images/instructor_page_left_background.svg) no-repeat top left;
+    background-size: 99.2%;*/   
+}
+#instructor_page_background{
+    width: initial;
+    height: 99.3%;
+    position: absolute;
 }
 .instructor_page_left_content_div{
     width: 100%;
@@ -1665,7 +1680,7 @@
     height: 9.1%;
     position: absolute;
     top: 47.4%;
-    left: 25.71%;
+    left: 25.74%;
     font-size: 80%;
     text-align: center;
 }
@@ -1687,7 +1702,7 @@
     height: 2.9%;
     position: absolute;
     top: 29.25%;
-    left: 44%;
+    left: 44.04%;
 }
 .instructor_page_dud_div,.instructor_page_dru_div{
     width: 100%;
@@ -1703,7 +1718,7 @@
 }
 .instructor_page_dru{
     top: 54.45%;
-    left: 44.05%;
+    left: 44.08%;
 }
 .instructor_page_dru_indicator{
     width: 2%;
@@ -1711,6 +1726,16 @@
     left: 46.375%;    
     font-size: 60%;
     color: #ffffff;
+}
+.instructor_page_left_content_bottom#left{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.instructor_page_left_content_bottom#right{
+    width: 49.83%;
+    height: 100%;
+    float: left;
 }
 .instructor_page_row_1_indicators,.instructor_page_row_2_indicators,.instructor_page_row_3_indicators,.instructor_page_row_4_indicators,.instructor_page_row_5_indicators{
     width: 3.37%;
@@ -1760,15 +1785,19 @@
 .instructor_page_row_3_indicators#indicator_3,.instructor_page_row_4_indicators#indicator_3,.instructor_page_row_5_indicators#indicator_3{
     top: 93.32%;    
 }
-.instructor_page_potok_div,.instructor_page_rastvor_div{
-    width: 13%;
-    height: 15%;
-    position: absolute;
-    top: 62.45%;
-    left: 27.5%;
+.instructor_page_potok_div{
+    width: 50%;
+    height: 30%;
+    position: relative;
+    top: 25%;
+    float: left;
 }
 .instructor_page_rastvor_div{
-    left: 40.65%;
+    width: 50%;
+    height: 30%;
+    position: relative;
+    top: 25%;
+    float: right;
 }
 .instructor_page_rastvor_div_left{
     width: 70%;
@@ -1776,6 +1805,13 @@
     float: left;
     background: url(images/instructor_page_metre_2.svg) no-repeat center;
     background-size: 75%;      
+}
+.instructor_page_potok_div_right{
+    width: 70%;
+    height: 100%;
+    float: right;    
+    background: url(images/instructor_page_metre_1.svg) no-repeat center;
+    background-size: 75%;  
 }
 .instructor_page_rastvor_div_right{
     width: 30%;
@@ -1801,7 +1837,10 @@
 }
 .instructor_left_ranges{
     float: left;
-    margin-left: 14%;
+    margin-left: 22%;
+}
+.instructor_left_ranges p,.instructor_right_ranges p,.instructor_page_potok_div_right p,.instructor_page_rastvor_div_left p{
+    position: relative;
 }
 .instructor_left_alert_div,.instructor_right_alert_div{
     width: 100%;
@@ -1810,21 +1849,29 @@
     position: relative;
 }
 .instructor_right_ranges{
-    margin-right: 14%;
     float: right;
+    margin-right: 22%;
 }
-.instructor_left_ranges p,.instructor_right_ranges p{
+
+.instructor_page_left_metre_arrow{
+    width: 36%;
+    display: block;
     position: relative;
+    top: 37.5%;
+    left: 20%;    
+    -webkit-transform-origin: 84.36697935446714% 13.994565217391305%;
+    -moz-transform-origin: 84.36697935446714% 13.994565217391305%;
+    -ms-transform-origin: 84.36697935446714% 13.994565217391305%;
+    -o-transform-origin: 84.36697935446714% 13.994565217391305%;
+    transform-origin: 84.36697935446714% 13.994565217391305%;    
 }
-.instructor_page_potok_div_right{
-    width: 70%;
-    height: 100%;
-    float: right;    
-    background: url(images/instructor_page_metre_1.svg) no-repeat center;
-    background-size: 75%;  
+.instructor_page_left_metre_indicator_text,.instructor_page_right_metre_indicator_text{
+    vertical-align: middle;
+    color: #333333;
+    font-size: 80%;
+    top: 78.2%;
+    display: block;
 }
-
-
 
 .instructor_page_right{
     width: 45.4%;
