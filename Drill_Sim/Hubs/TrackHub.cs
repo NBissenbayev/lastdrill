@@ -177,5 +177,14 @@ namespace Drill_Sim.Hubs
             Clients.OthersInGroup(roomName).getArrays(DPP, SICP, PitVa, ChPos, FP, spm, BHPd, CSHP);
         }
 
+        /*
+         * Setting Difficulty to pump on exam session 
+         */
+
+        public void ComplicatePump(string roomName, string pumpID, string action)
+        {
+            Clients.OthersInGroup(roomName).triggerPump(pumpID, action);
+        }
+
     }
 }

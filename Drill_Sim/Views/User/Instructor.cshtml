@@ -22,7 +22,10 @@
     <script src="~/Scripts/manual_js/jquery-ui.min.js" type="text/javascript"></script>
     <script src="~/Scripts/manual_js/d3.min.js" type="text/javascript"></script>
     <script src="~/Scripts/slick.js"></script>
+
     <script src="~/Scripts/manual_js/rotor_scripts.js" type="text/javascript"></script>
+    <script src="~/Scripts/moment.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/moment-with-locales.min.js"></script>
     <script src="~/Scripts/manual_js/instructor_scripts.js" type="text/javascript"></script>
     <script src="~/Scripts/manual_js/highstock.js" type="text/javascript"></script>
     <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
@@ -297,7 +300,7 @@
                                                             <td><button class="simulation_creation_step_2_content_right_top_supervisor">СУПЕРВАЙЗЕР</button></td>
                                                         </tr>
                                                         <tr>
-                                                            <td><button id="simulation_creation_step_2_team_member_2" id="down">ЗАПОЛНИТЬ<br>ДАННЫЕ</button></td>
+                                                            <td><button id="simulation_creation_step_2_team_member_2">ЗАПОЛНИТЬ<br>ДАННЫЕ</button></td>
                                                             <td>
                                                                 <ul class="simulation_creation_step_2_team_member_level_choice_buttons" id="bottom">
                                                                     <li><button id="bottom">Lv.2</button></li>
@@ -739,7 +742,7 @@
                 <div class="instructor_page">
                     <div class="instructor_page_left">
                         <div class="instructor_page_left_content">
-
+                            <object id="instructor_page_background" data="@Url.Content("~/Content/images/instructor_page_left_background.svg")" type="image/svg+xml"></object>
                             <div class="instructor_page_left_content_div">
                                 <img class="instructor_hose_1" src="@Url.Content("~/Content/images/instructor_hose_1.svg")">
                                 <img class="instructor_hose_2" src="@Url.Content("~/Content/images/instructor_hose_2.svg")">
@@ -782,31 +785,77 @@
                                 </div>
                                 <p class="instructor_page_dru_indicator">0</p>
                             </div><div class="instructor_page_left_content_div">
-                                <p class="instructor_page_row_1_indicators" id="indicator_1">0</p>
-                                <p class="instructor_page_row_1_indicators" id="indicator_2">0</p>
-                                <p class="instructor_page_row_1_indicators" id="indicator_3">0</p>
-                                <p class="instructor_page_row_1_indicators" id="indicator_4">0</p>
-                                <p class="instructor_page_row_1_indicators" id="indicator_5">0</p>
-                                <p class="instructor_page_row_1_indicators" id="indicator_6">0</p>
-                                <p class="instructor_page_row_1_indicators" id="indicator_7">0</p>
+                                      <div class="instructor_page_left_content_bottom" id="left">
+                                          <p class="instructor_page_row_1_indicators" id="indicator_1">0</p>
+                                          <p class="instructor_page_row_1_indicators" id="indicator_2">0</p>
+                                          <p class="instructor_page_row_1_indicators" id="indicator_3">0</p>
+                                          <p class="instructor_page_row_1_indicators" id="indicator_4">0</p>
+                                          <p class="instructor_page_row_1_indicators" id="indicator_5">0</p>
+                                          <p class="instructor_page_row_1_indicators" id="indicator_6">0</p>
+                                          <p class="instructor_page_row_1_indicators" id="indicator_7">0</p>
 
-                                <p class="instructor_page_row_2_indicators" id="indicator_1">0</p>
-                                <p class="instructor_page_row_2_indicators" id="indicator_2">0</p>
-                                <p class="instructor_page_row_2_indicators" id="indicator_3">0</p>
-                                <p class="instructor_page_row_2_indicators" id="indicator_4">0</p>
-                                <p class="instructor_page_row_2_indicators" id="indicator_5">0</p>
-                                <p class="instructor_page_row_2_indicators" id="indicator_6">0</p>
-                                <p class="instructor_page_row_2_indicators" id="indicator_7">0</p>
-
-                                <p class="instructor_page_row_3_indicators" id="indicator_1">0</p>
-                                <p class="instructor_page_row_3_indicators" id="indicator_2">0</p>
-                                <p class="instructor_page_row_3_indicators" id="indicator_3">0</p>
-                                <p class="instructor_page_row_4_indicators" id="indicator_1">0</p>
-                                <p class="instructor_page_row_4_indicators" id="indicator_2">0</p>
-                                <p class="instructor_page_row_4_indicators" id="indicator_3">0</p>
-                                <p class="instructor_page_row_5_indicators" id="indicator_1">0</p>
-                                <p class="instructor_page_row_5_indicators" id="indicator_2">0</p>
-                                <p class="instructor_page_row_5_indicators" id="indicator_3">0</p>
+                                          <p class="instructor_page_row_2_indicators" id="indicator_1">0</p>
+                                          <p class="instructor_page_row_2_indicators" id="indicator_2">0</p>
+                                          <p class="instructor_page_row_2_indicators" id="indicator_3">0</p>
+                                          <p class="instructor_page_row_2_indicators" id="indicator_4">0</p>
+                                          <p class="instructor_page_row_2_indicators" id="indicator_5">0</p>
+                                          <p class="instructor_page_row_2_indicators" id="indicator_6">0</p>
+                                          <p class="instructor_page_row_2_indicators" id="indicator_7">0</p>
+                                      </div>
+                                      <div class="instructor_page_left_content_bottom" id="right">
+                                          <div class="instructor_page_potok_div">
+                                              <div class="instructor_page_potok_div_left">
+                                                  <div class="instructor_left_ranges">
+                                                      <div id="left_up_range">
+                                                          <p id="left_up_range_text">33.0</p>
+                                                      </div><div id="left_middle_icon">
+                                                          <span class="helper"></span><img id="ranges_icon" src="@Url.Content("~/Content/images/1_ranges_icon.svg")">
+                                                      </div><div id="left_down_range">
+                                                          <p id="left_down_range_text">27.0</p>
+                                                      </div>
+                                                  </div>
+                                                  <div class="instructor_left_alert_div">
+                                                      <img class="left_alert" src="@Url.Content("~/Content/images/off_state_alert.svg")">
+                                                  </div>
+                                              </div>
+                                              <div class="instructor_page_potok_div_right">
+                                                  <p class="instructor_page_left_metre_indicator_text">0</p>
+                                                  <img class="instructor_page_left_metre_arrow" src="@Url.Content("~/Content/images/instructor_page_arrow.svg")">
+                                              </div>
+                                          </div>
+                                          <div class="instructor_page_rastvor_div">
+                                              <div class="instructor_page_rastvor_div_left">
+                                                  <p class="instructor_page_right_metre_indicator_text">0</p>
+                                                  <img class="instructor_page_left_metre_arrow" src="@Url.Content("~/Content/images/instructor_page_arrow.svg")">
+                                              
+                                              </div>
+                                              <div class="instructor_page_rastvor_div_right">
+                                                  <div class="instructor_right_ranges">
+                                                      <div id="left_up_range">
+                                                          <p id="left_up_range_text">33.0</p>
+                                                      </div><div id="left_middle_icon">
+                                                          <span class="helper"></span><img id="ranges_icon" src="@Url.Content("~/Content/images/1_ranges_icon.svg")">
+                                                      </div><div id="left_down_range">
+                                                          <p id="left_down_range_text">27.0</p>
+                                                      </div>
+                                                  </div>
+                                                  <div class="instructor_right_alert_div">
+                                                      <img class="left_alert" src="@Url.Content("~/Content/images/off_state_alert.svg")">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="instructor_page_indicators">
+                                              <p class="instructor_page_row_3_indicators" id="indicator_1">0</p>
+                                              <p class="instructor_page_row_3_indicators" id="indicator_2">0</p>
+                                              <p class="instructor_page_row_3_indicators" id="indicator_3">0</p>
+                                              <p class="instructor_page_row_4_indicators" id="indicator_1">0</p>
+                                              <p class="instructor_page_row_4_indicators" id="indicator_2">0</p>
+                                              <p class="instructor_page_row_4_indicators" id="indicator_3">0</p>
+                                              <p class="instructor_page_row_5_indicators" id="indicator_1">0</p>
+                                              <p class="instructor_page_row_5_indicators" id="indicator_2">0</p>
+                                              <p class="instructor_page_row_5_indicators" id="indicator_3">0</p>
+                                          </div>
+                                      </div>
                             </div>
 
                             <div class="instructor_page_potok_div">
@@ -3165,7 +3214,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АВПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="9.14">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Газ"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3177,7 +3226,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АВПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Вода"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3189,7 +3238,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АНПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Вода"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3201,7 +3250,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АВПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Вода"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3213,7 +3262,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АВПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Вода"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3225,7 +3274,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АНПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Газ"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3237,7 +3286,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АВПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Вода"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3249,7 +3298,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АВПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Вода"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3261,7 +3310,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АНПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Вода"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -3273,7 +3322,7 @@
                                         <td><input class="instructor_data_settings_content_section_1_part_0_input" type="text" value="АНПД"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_1_input" type="text" value="9.14">м</td>
                                         <td><input class="instructor_data_settings_content_section_1_part_2_input" type="text" value="30">м</td>
-                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td></td>
+                                        <td><input class="instructor_data_settings_content_section_1_part_3_input" type="text" value="0.80"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_4_input" type="text" value="1.00"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_5_input" type="text" value="Вода"></td>
                                         <td><input class="instructor_data_settings_content_section_1_part_6_input" type="text" value="1">мД</td>
@@ -4025,7 +4074,7 @@
                                  xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs>
                             <style type="text/css">
-                                <![CDATA[ .str0 {
+                                .str0 {
                                     stroke: #666666;
                                     stroke-width: 866.981;
                                 }
@@ -4062,8 +4111,6 @@
                                     fill: #B3B3B3;
                                     fill-rule: nonzero;
                                 }
-
-                                ]] >
 </style>
                             <clipPath id="id0">
                             <path d="M0 4808l1537 0 50219 0 0 12296 -51756 0 0 -12296zm78246 0l50220 0 1537 0 0 12296 -51757 0 0 -12296z" />
@@ -4291,8 +4338,9 @@
                     </div>
                     <img class="instructor_data_settings_content_section_9_part_3_down_left_icon" src="@Url.Content("~/Content/images/instructor_data_settings_content_section_9_part_3_down_left_icon_off.svg")">
                 </div>
+                <div class="instructor_simulation_result">
 
-
+                </div>
             </div>
         </div>
     </div>

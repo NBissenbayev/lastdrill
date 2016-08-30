@@ -194,28 +194,27 @@ function changeInstructorMenuDiv(menuID) {
         instructor_current_menu_id = menuID;
 
         switch (instructor_current_menu_id) {
-
             case '1':
                 $(".simulation_creation").css("display", "block");
-                $(".rotor_area,.slugging_group,.supervisor_panel,.pvo_equipment,.valves_group,.pumps,.instructor_complications,.instructor_data_settings,.instructor_details,.instructor_page").css("display", "none");
+                $(".rotor_area,.slugging_group,.supervisor_panel,.pvo_equipment,.valves_group,.pumps,.instructor_complications,.instructor_data_settings,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (rotorIsOn) repaintRotor(1);
                 break;
 
             case '2':
                 $(".instructor_data_settings").css("display", "block");
-                $(".rotor_area,.slugging_group,.supervisor_panel,.pvo_equipment,.valves_group,.pumps,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page").css("display", "none");
+                $(".rotor_area,.slugging_group,.supervisor_panel,.pvo_equipment,.valves_group,.pumps,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (rotorIsOn) repaintRotor(1);
                 break;
 
             case '3':
                 $(".instructor_page").css("display", "block");
-                $(".rotor_area,.slugging_group,.supervisor_panel,.pvo_equipment,.valves_group,.pumps,.instructor_complications,.simulation_creation,.instructor_data_settings,.instructor_details").css("display", "none");
+                $(".rotor_area,.slugging_group,.supervisor_panel,.pvo_equipment,.valves_group,.pumps,.instructor_complications,.simulation_creation,.instructor_data_settings,.instructor_details,.instructor_simulation_result").css("display", "none");
                 if (rotorIsOn) repaintRotor(1);
                 break;
 
             case '4':
                 $(".rotor_area").css("display", "block");
-                $(".slugging_group,.supervisor_panel,.pvo_equipment,.valves_group,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page").css("display", "none");
+                $(".slugging_group,.supervisor_panel,.pvo_equipment,.valves_group,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (state_of_screen == 0) repaint_window('ready'); else
                     if (state_of_screen == 1) repaint_window('on'); else
                         repaint_window('off');
@@ -224,43 +223,49 @@ function changeInstructorMenuDiv(menuID) {
 
             case '7':
                 $(".valves_group").css("display", "block");
-                $(".rotor_area,.supervisor_panel,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page").css("display", "none");
+                $(".rotor_area,.supervisor_panel,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (!rotorIsOn) repaintRotor(0);
                 break;
 
             case '9':
                 $(".supervisor_panel").css("display", "block");
-                $(".rotor_area,.valves_group,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page").css("display", "none");
+                $(".rotor_area,.valves_group,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (!rotorIsOn) repaintRotor(0);
                 break;
 
             case '8':
                 $(".pvo_equipment").css("display", "block");
-                $(".rotor_area,.valves_group,.supervisor_panel,.slugging_group,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page").css("display", "none");
+                $(".rotor_area,.valves_group,.supervisor_panel,.slugging_group,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (!rotorIsOn) repaintRotor(0);
                 break;
 
             case '5':
                 $(".slugging_group").css("display", "block");
-                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page").css("display", "none");
+                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (!rotorIsOn) repaintRotor(0);
                 break;
 
             case '6':
                 $(".pumps").css("display", "block");
-                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.slugging_group,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page").css("display", "none");
+                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.slugging_group,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (!rotorIsOn) repaintRotor(0);
                 break;
 
             case '10':
                 $(".instructor_complications").css("display", "block");
-                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.simulation_creation,.instructor_details,.instructor_page").css("display", "none");
+                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.simulation_creation,.instructor_details,.instructor_page,.instructor_simulation_result").css("display", "none");
                 if (!rotorIsOn) repaintRotor(0);
                 break;
 
             case '11':
                 $(".instructor_details").css("display", "block");
-                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.simulation_creation,.instructor_complications,.instructor_page").css("display", "none");
+                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.simulation_creation,.instructor_complications,.instructor_page,.instructor_simulation_result").css("display", "none");
+                if (!rotorIsOn) repaintRotor(0);
+                break;
+
+            case '12':
+                $(".instructor_simulation_result").css("display", "block");
+                $(".rotor_area,.valves_group,.supervisor_panel,.pvo_equipment,.slugging_group,.pumps,.instructor_data_settings,.simulation_creation,.instructor_complications,.instructor_page,.instructor_details").css("display", "none");
                 if (!rotorIsOn) repaintRotor(0);
                 break;
         }
@@ -292,6 +297,10 @@ function changeInstructorDataSettingsSection(sectionID) {
         instructor_current_section_id = sectionID;
     }
 }
+
+/*
+Debug purposes
+*/
 
 function print_snapshots() {
     for (i = 0; i < snapshots.length; i++) {
@@ -331,6 +340,13 @@ function initialization() {
     // todo, get shapshots from db        
 }
 
+function rotate_instructor_page_left_metre_arrow(value) {
+    var angle;
+    angle = value * 2.43;
+    $('.instructor_page_left_metre_arrow').rotate({ animateTo: angle, duration: 2000 });
+    animateTextNumber(1, '.instructor_page_left_metre_indicator_text', cur_percentage_left, value);
+    cur_percentage_left = value;
+}
 
 
 function repaintStudentListSimulationCreation(index) {
@@ -937,6 +953,7 @@ $(document).ready(function () {
         instructor_previous_complications_id = clickedID;
     });
 
+    var action = null;
     $('.instructor_complications_content_right_1 table button').click(function () {
         var clickedID = $(this).attr('id').slice(-1);
         switch ($(this).attr('id')) {
@@ -947,6 +964,8 @@ $(document).ready(function () {
                     $('.instructor_complications_content_right_1 table button#button_deactivate_' + clickedID + '').css('opacity', '0.3').html('ДЕАКТИВИРОВАТЬ<br>ОСЛОЖНЕНИЯ');
                     instructor_is_complicated_1[clickedID] = 1;
                 }
+                action = 'break';
+                socket.server.complicatePump(roomName, clickedID, action);
                 break;
 
             case 'button_deactivate_1':
@@ -956,6 +975,8 @@ $(document).ready(function () {
                     $('.instructor_complications_content_right_1 table button#button_activate_' + clickedID + '').css('opacity', '0.3').html('АКТИВИРОВАТЬ<br>ОСЛОЖНЕНИЕ');
                     instructor_is_complicated_1[clickedID] = 0;
                 }
+                action = 'restore';
+                socket.server.complicatePump(roomName, clickedID, action);
                 break;
         }
 
@@ -1350,7 +1371,17 @@ $(document).ready(function () {
                 break;
         }
     });
+    /*var a = $("#instructor_page_background");
+    a.addEventListener("load", function () {
+        var svgDoc = a.contentDocument; //get the inner DOM of alpha.svg
+        var delta = svgDoc.getElementById("ins_page_fil9-1"); //get the inner element by id
+        delta.style.fill = 'white';
+    }, false);*/
 
+    /*var instructor_page_background = $('#instructor_page_background')[0].contentDocument;
+    $('#ins_page_fil9-1', instructor_page_backround).click(function () {
+        alert(1);
+    });*/
 });
 
 $(window).on("fullscreen-on", function () {

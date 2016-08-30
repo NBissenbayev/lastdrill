@@ -370,18 +370,17 @@ table{
 */
 
 .left_arrow_icon{
-	width: 27%;
-	height: 50%;
-	display: block;
-	position: relative;
-	bottom: 5%;
-	left: 28%;
-	z-index: 20;
-	-webkit-transform-origin:82.027546114785073216816249409542% 87.299107811815837698457746136257%;
-    -moz-transform-origin:82.027546114785073216816249409542% 87.299107811815837698457746136257%;
-    -ms-transform-origin:82.027546114785073216816249409542% 87.299107811815837698457746136257%;
-    -o-transform-origin:82.027546114785073216816249409542% 87.299107811815837698457746136257%;
-    transform-origin:82.027546114785073216816249409542% 87.299107811815837698457746136257%;
+    width: 47%;
+    display: block;
+    position: relative;
+    left: 10.1%;
+    top: 32.5%;
+    z-index: 20;
+    -webkit-transform-origin: 85.87171320329633% 13.758928571428605%;
+    -moz-transform-origin: 85.87171320329633% 13.758928571428605%;
+    -ms-transform-origin: 85.87171320329633% 13.758928571428605%;
+    -o-transform-origin: 85.87171320329633% 13.758928571428605%;
+    transform-origin: 85.87171320329633% 13.758928571428605%;
 }
 
 #left_range{
@@ -393,7 +392,6 @@ table{
 }
 
 /*///////////////////////////*/
-
 
 .left_content_1_right_text{
 	font-size: 88.25%;
@@ -1286,6 +1284,7 @@ table{
     height: 3%;
     position: absolute;
     left: 73.1%;
+    top: 75%;
     border-top: 0.05em dotted;
     border-bottom: 0.05em dotted;
     border-color: #ffffff;
@@ -2754,19 +2753,6 @@ table{
 #pvo_equipment_switcher_1,#pvo_equipment_switcher_2,#pvo_equipment_switcher_3,#pvo_equipment_switcher_4,#pvo_equipment_switcher_5,#pvo_equipment_switcher_6{
 	width: 5.13%;
     height: 6.5%;
-    background-color: #FF0000;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    top: 13.25%;
-    left: 42.8%;
-}
-
-
-
-#pvo_equipment_switcher_1,#pvo_equipment_switcher_2,#pvo_equipment_switcher_3,#pvo_equipment_switcher_4,#pvo_equipment_switcher_5,#pvo_equipment_switcher_6{
-	width: 5.13%;
-    height: 6.5%;
     background-color: #009933;
     border-radius: 50%;
     cursor: pointer;
@@ -2799,15 +2785,15 @@ table{
     background-color: #FF0000;
 }
 
-    .pvo_str0 {stroke:#4D4D4D;stroke-width:529.1}
-    .pvo_fil3 {fill:black}
-    .pvo_fil1 {fill:#666666}
-    .pvo_fil0-5,.pvo_fil0-6 {fill:#666666}
-    .pvo_fil0,.pvo_fil0-1,.pvo_fil0-2,.pvo_fil0-3,.pvo_fil0-4 {fill:#B3B3B3}
-    .pvo_fil4-5,.pvo_fil4-6 {fill:#999999;fill-rule:nonzero}
-    .pvo_fil4,.pvo_fil4-1,.pvo_fil4-2,.pvo_fil4-3,.pvo_fil4-4,.pvo_fil2-1,.pvo_fil2-2,.pvo_fil2-3,.pvo_fil2-4{fill:#2D2D32;fill-rule:nonzero}
-    .pvo_fil2-5,.pvo_fil2-5-1,.pvo_fil2-6,.pvo_fil2-6-1 {fill:#E6E6E6;fill-rule:nonzero}
-    .pvo_fil2,.pvo_fil2-1-1,.pvo_fil2-2-1,.pvo_fil2-3-1,.pvo_fil2-4-1{fill:#666666;fill-rule:nonzero}
+.pvo_str0 {stroke:#4D4D4D;stroke-width:529.1}
+.pvo_fil3 {fill:black}
+.pvo_fil1 {fill:#666666}
+.pvo_fil0-5,.pvo_fil0-6 {fill:#666666}
+.pvo_fil0,.pvo_fil0-1,.pvo_fil0-2,.pvo_fil0-3,.pvo_fil0-4 {fill:#B3B3B3}
+.pvo_fil4-5,.pvo_fil4-6 {fill:#999999;fill-rule:nonzero}
+.pvo_fil4,.pvo_fil4-1,.pvo_fil4-2,.pvo_fil4-3,.pvo_fil4-4,.pvo_fil2-1,.pvo_fil2-2,.pvo_fil2-3,.pvo_fil2-4{fill:#2D2D32;fill-rule:nonzero}
+.pvo_fil2-5,.pvo_fil2-5-1,.pvo_fil2-6,.pvo_fil2-6-1 {fill:#E6E6E6;fill-rule:nonzero}
+.pvo_fil2,.pvo_fil2-1-1,.pvo_fil2-2-1,.pvo_fil2-3-1,.pvo_fil2-4-1{fill:#666666;fill-rule:nonzero}
 
 .pvo_apply{
 	width: 14%;
@@ -2824,7 +2810,7 @@ table{
 
 /*29.03.2016*/
 
-.valves_group,.pvo_equipment,.pumps,.instructor_data_settings,.instructor_complications,.simulation_creation,.instructor_details,.instructor_page{
+.valves_group,.pvo_equipment,.pumps{
 	background-color: #2d2d32;
 	width: 99.28%;
 	height: 87.4%;
@@ -3095,7 +3081,6 @@ table{
     top: 91.33%;
     left: 63.03%;
 }
-
 .pumps_element_icon_8,.pumps_element_icon_9{
     width: 8%;
     position: absolute;
@@ -3307,7 +3292,6 @@ table{
 }
 
 /*05.04.2016*/
-
 .loader_div{
     width: 100%;
     height: 100%;
